@@ -6,14 +6,14 @@ MoneyMint is a simple app for tracking expenses, budgeting, and getting an overv
   <img alt="MoneyMint" src="./public/images/project-screenshot.png" style="max-width: 100%;">
 </p>
 
-#### Tech used
+## Tech used
 
 - [Laravel](https://laravel.com)
 - [PHP](https://www.php.net)
 - [MySQL](https://www.mysql.com)
 - [Tailwind CSS](https://tailwindcss.com)
 
-#### How to run
+## How to run
 
 Follow the instructions
 
@@ -25,10 +25,10 @@ Follow the instructions
 - Run `php artisan migrate --seed` to create the database tables and seed the database
 - Run `php artisan serve` to start the server and access the application
 
-#### Caution
+## Caution
 
 This project is intended for experiment.
 
-#### Contribution
+## Contribution
 
 Ideas and contributions are welcome! 🙌
