@@ -56,4 +56,27 @@ class FinanceManagementController extends BaseController
         }
     }
 
+    /**
+     * Get the financial summary
+     */
+    public function getFinancialSummary()
+    {
+        try {
+            $totalIncome    = Income::sum('amount');
+            $totalExpenses  = Expense::sum('amount');
+            $dailyExpenses  = Expense::whereDate('created_at', today())->sum('amount');
+            $currentBalance = $totalIncome - $totalExpenses;
+
+            return response()->json([
+                'total_income'    => $totalIncome,
+                'total_expenses'  => $totalExpenses,
+                'daily_expenses'  => $dailyExpenses,
+                'current_balance' => $currentBalance,
+            ]);
+
+        } catch (Exception $e) {
+            return $this->errorResponse($e->getMessage(), 500);
+        }
+    }
+
 }
