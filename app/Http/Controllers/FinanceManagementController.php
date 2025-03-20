@@ -34,9 +34,9 @@ class FinanceManagementController extends BaseController
     }
 
     /**
-     * Deduct an expense from the income
+     * Add a new expense record
      */
-    public function deductExpense(ExpenseRequest $request)
+    public function addExpense(ExpenseRequest $request)
     {
         try {
             Expense::create($request->validated());

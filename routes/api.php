@@ -9,5 +9,5 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 Route::post('add-income', [FinanceManagementController::class, 'addIncome']);
-Route::post('deduct-expense', [FinanceManagementController::class, 'deductExpense']);
+Route::post('add-expense', [FinanceManagementController::class, 'addExpense']);
 Route::get('get-financial-summary', [FinanceManagementController::class, 'getFinancialSummary']);
