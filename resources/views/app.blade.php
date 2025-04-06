@@ -10,9 +10,10 @@
                         <h2 class="text-lg font-medium leading-6 text-gray-900">Overview</h2>
                         <div class="mt-2 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
                             <!-- Card -->
-                            <x-card title="Total Income" />
-                            <x-card title="Account Balance" />
-                            <x-card title="Daily Expense" />
+                            <x-card title="Total Income" :value="$totalIncome" />
+                            <x-card title="Total Expense" :value="$totalExpenses" />
+                            <x-card title="Account Balance" :value="$currentBalance" />
+
                         </div>
                     </div>
 

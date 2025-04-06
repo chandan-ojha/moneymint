@@ -67,15 +67,10 @@ class FinanceManagementController extends BaseController
             $dailyExpenses  = Expense::whereDate('created_at', today())->sum('amount');
             $currentBalance = $totalIncome - $totalExpenses;
 
-            return response()->json([
-                'total_income'    => $totalIncome,
-                'total_expenses'  => $totalExpenses,
-                'daily_expenses'  => $dailyExpenses,
-                'current_balance' => $currentBalance,
-            ]);
+            return view('app', compact('totalIncome', 'totalExpenses', 'dailyExpenses', 'currentBalance'));
 
         } catch (Exception $e) {
-            return $this->errorResponse($e->getMessage(), 500);
+            return view('error', ['error' => $e->getMessage()]);
         }
     }
 

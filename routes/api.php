@@ -10,4 +10,3 @@ Route::get('/user', function (Request $request) {
 
 Route::post('add-income', [FinanceManagementController::class, 'addIncome']);
 Route::post('add-expense', [FinanceManagementController::class, 'addExpense']);
-Route::get('get-financial-summary', [FinanceManagementController::class, 'getFinancialSummary']);
