@@ -1,5 +1,5 @@
 <div x-show="open"
-    class="fixed top-0 z-50 left-0 bg-black bg-opacity-40 w-screen h-screen overflow-hidden flex items-center justify-center">
+    class="fixed top-0 z-50 left-[-12px] bg-black bg-opacity-40 w-screen h-screen overflow-hidden flex items-center justify-center">
     <div class="bg-white min-w-[500px] rounded-md shadow-md">
         <!-- Modal Header  -->
         <div class="flex items-center justify-between py-2 px-3 border-b bg-gray-200 rounded-t-md">
