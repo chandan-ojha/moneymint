@@ -10,6 +10,25 @@ use Exception;
 class FinanceManagementController extends BaseController
 {
     /**
+     * Get the financial summary
+     */
+    public function getFinancialSummary()
+    {
+        try {
+            $totalIncome    = Income::sum('amount');
+            $totalExpenses  = Expense::sum('amount');
+            $dailyExpenses  = Expense::whereDate('created_at', today())->sum('amount');
+            $currentBalance = $totalIncome - $totalExpenses;
+            $expenses       = Expense::orderBy('created_at', 'desc')->paginate(10);
+
+            return view('app', compact('totalIncome', 'totalExpenses', 'dailyExpenses', 'currentBalance', 'expenses'));
+
+        } catch (Exception $e) {
+            return view('error', ['error' => $e->getMessage()]);
+        }
+    }
+
+    /**
      * Add a new income record
      */
     public function addIncome(IncomeRequest $request)
@@ -53,24 +72,6 @@ class FinanceManagementController extends BaseController
             }
 
             return redirect()->back()->with('error', 'An error occurred while adding expense');
-        }
-    }
-
-    /**
-     * Get the financial summary
-     */
-    public function getFinancialSummary()
-    {
-        try {
-            $totalIncome    = Income::sum('amount');
-            $totalExpenses  = Expense::sum('amount');
-            $dailyExpenses  = Expense::whereDate('created_at', today())->sum('amount');
-            $currentBalance = $totalIncome - $totalExpenses;
-
-            return view('app', compact('totalIncome', 'totalExpenses', 'dailyExpenses', 'currentBalance'));
-
-        } catch (Exception $e) {
-            return view('error', ['error' => $e->getMessage()]);
         }
     }
 

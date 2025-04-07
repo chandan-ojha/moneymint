@@ -12,3 +12,8 @@ function getGreeting()
         return 'Good evening, Chandan!';
     }
 }
+
+function dateFormatter($date)
+{
+    return \Carbon\Carbon::parse($date)->format('d M, Y');
+}
