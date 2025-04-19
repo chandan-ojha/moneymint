@@ -38,16 +38,16 @@ class FinanceManagementController extends BaseController
 
             // Return a response based on the request type
             if ($request->wantsJson()) {
-                return response()->json(['message' => 'Income added successfully'], 201);
+                return response()->json(['message' => 'Income added successfully!'], 201);
             }
-            return redirect()->back()->with('success', 'Income added successfully');
+            return redirect()->back()->with('success', 'Income added successfully!');
 
         } catch (Exception $e) {
             if ($request->wantsJson()) {
                 return $this->errorResponse($e->getMessage(), 500);
             }
 
-            return redirect()->back()->with('error', 'An error occurred while adding income');
+            return redirect()->back()->with('error', 'An error occurred while adding income.');
         }
 
     }
@@ -62,16 +62,16 @@ class FinanceManagementController extends BaseController
 
             // Return a response based on the request type
             if ($request->wantsJson()) {
-                return response()->json(['message' => 'Expense added successfully'], 201);
+                return response()->json(['message' => 'Expense added successfully!'], 201);
             }
-            return redirect()->back()->with('success', 'Expense added successfully');
+            return redirect()->back()->with('success', 'Expense added successfully!');
 
         } catch (Exception $e) {
             if ($request->wantsJson()) {
                 return $this->errorResponse($e->getMessage(), 500);
             }
 
-            return redirect()->back()->with('error', 'An error occurred while adding expense');
+            return redirect()->back()->with('error', 'An error occurred while adding expense.');
         }
     }
 

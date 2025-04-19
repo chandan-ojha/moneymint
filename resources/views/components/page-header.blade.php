@@ -15,7 +15,13 @@
                     </div>
                 </div>
             </div>
-            <div class="mt-6 flex space-x-3 md:ml-4 md:mt-0" x-data="{ open: false, modalTitle: '' }">
+            <div class="mt-6 flex space-x-3 md:ml-4 md:mt-0" x-data="{
+                open: false,
+                modalTitle: '',
+                resetForm() {
+                    this.$refs.financeForm.reset();
+                }
+            }">
                 <button @click="open = true; modalTitle = 'Add Income'" type="button"
                     class="inline-flex items-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
                     Add Income
