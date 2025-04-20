@@ -11,6 +11,7 @@ WalletWatch is a simple app for tracking expenses, budgeting, and getting an ove
 -   [Laravel](https://laravel.com)
 -   [PHP](https://www.php.net)
 -   [MySQL](https://www.mysql.com)
+-   [Alpine.js](https://alpinejs.dev)
 -   [Tailwind CSS](https://tailwindcss.com)
 
 ## How to run
