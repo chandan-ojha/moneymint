@@ -1,0 +1,27 @@
+name: Deploy Production 🚀
+
+on:
+  push:
+    branches: [ "prod" ]
+    
+# variables for all jobs
+env:
+  SERVER_ROOT: root@wallet-watch-ajfk0-web-788d8f484f-jl4ds
+  SERVER_USER: chandan
+  SERVER_PORT: 8080
+  SERVER_HOST: https://wallet-watch-ajfk0.kinsta.app
+  
+jobs:
+  deploy:
+    name: Wallet Watch Production Server 🚀
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: File Copy to Production Server
+       env:
+          HOST: ${{ env.SERVER_HOST }}
+          USERNAME: ${{ env.SERVER_USER }}
+          PORT: ${{ env.SERVER_PORT }}
+          KEY: wallet-watch-ajfk0-web.wallet-watch-ajfk0.svc.cluster.local
+     
