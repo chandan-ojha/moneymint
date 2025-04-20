@@ -60,4 +60,5 @@
 <!-- End Add Income Modal -->
 
 <!--Form Feedback -->
-<x-common.feedback />
+@include('common.feedback')
+<!--End Form Feedback -->
